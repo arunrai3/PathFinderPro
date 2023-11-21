@@ -1,12 +1,14 @@
-#First Name: Arun           Last Name: Rai          Student ID Number: 010630226
-#---------------------------------------------------------------------------------------------------------------------------
-#IMPORTANT NOTE: change the directory location on lines 250-252 to the appropaite location where the nexessary csv files are.
-#---------------------------------------------------------------------------------------------------------------------------
+#-----------------------------------------
+#Developer: Arun Rai
+#Project Name: Path Finder Pro        
+#-----------------------------------------
+
 import csv
 import math
 import datetime as othertime
 import sys
 import re
+import os
 from datetime import datetime
 
 #self adjusting hash table data structure that stores the packages without using any external libraries
@@ -246,11 +248,19 @@ def startProgram():
 
     trucklist = [truck1,truck2,truck3]
 
-    #extract necessary data from csv files.
-    importPackageFromCSV(r"Z:\dsa2_final\packageCSV.csv")  
-    importAddressFromCSV(r"Z:\dsa2_final\addressCSV.csv")
-    importDistanceFromCSV(r"Z:\dsa2_final\distanceCSV.csv")
-
+    # Get the directory of the current script
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    
+    # Construct the file paths relative to the script directory using os.path.join
+    package_csv_path = os.path.join(script_directory, "data", "packageCSV.csv")
+    address_csv_path = os.path.join(script_directory, "data", "addressCSV.csv")
+    distance_csv_path = os.path.join(script_directory, "data", "distanceCSV.csv")
+    
+    # Use the constructed file paths in your functions
+    importPackageFromCSV(package_csv_path)
+    importAddressFromCSV(address_csv_path)
+    importDistanceFromCSV(distance_csv_path)
+    
     #create lists of which truck each package will be assigned to
     truck1packagelist = [1, 15, 13, 14, 16, 19, 29, 20, 31, 34, 37]
     truck2packagelist = [3, 6, 25, 28, 32, 36, 38, 18, 30, 35, 40]
@@ -308,7 +318,7 @@ def correctAddressPackage9(truck):
 #First thing that is displayed to user. Easy to use user interface from command line
 def runQuestion1():
     #Displays options and accpets user input
-    answer = input("\n\nWelocome to WGU delivery simulation! Please choose one of the options below by typing the letter next to that option.\n\nr - run simulation\nq - quit\n\n>")
+    answer = input("\n\nWelocome to the PathFinderPro delivery simulation! Please choose one of the options below by typing the letter next to that option.\n\nr - run simulation\nq - quit\n\n>")
     if answer == "r":
         startProgram()
     elif answer == "q":
