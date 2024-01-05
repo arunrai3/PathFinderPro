@@ -13,6 +13,19 @@ Welcome to PathFinderPro, a command-line Python application designed to optimize
 - **Comprehensive Reporting:** Generates reports on the fly, providing insights into route efficiency, package status, and overall delivery performance.
 - **CSV Package Data Integration:** Seamlessly imports package data from `packageCSV.csv`, allowing for easy data management and updates.
 
+## Data
+
+The PathFinderPro program extensively utilizes data stored in the `/data` folder to optimize delivery routes and manage package information. This data is fundamental to the program's operation, as it includes key details such as distances between locations and address information. 
+
+### Current Data Structure:
+
+- **Distances Data:** Contains the distances between various delivery points, essential for calculating the most efficient routes.
+- **Address Data:** Provides detailed address information for each delivery location, ensuring accurate and reliable package delivery.
+
+### Future Enhancements:
+
+- **Google Maps API Integration:** In future updates, PathFinderPro aims to incorporate the Google Maps API. This enhancement will allow for greater flexibility and scalability, enabling users to input a broader range of locations and addresses. With this integration, the program will be able to handle dynamic routing based on real-time data and user-specific requirements, significantly expanding its capabilities and applicability in various logistical scenarios.
+
 
 ## Dependencies
 All imports in this program are a part of Python's standard library and don't require any external packages.
